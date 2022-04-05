@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Gestor Incidencias</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <!-- Bootstrap -->
+	    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
+	    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+        <script src="index.js"></script>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+            <a class="navbar-brand" href="index.html">Listado de incidencias</a>
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="incident.html">Crear incidencia</a></li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                        Estado
+                    </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#" onclick="filtrarEstado(true)">Completas</a>
+                        <a class="dropdown-item" href="#" onclick="filtrarEstado(false)">Incompletas</a>
+                    </div>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                        Severidad
+                    </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#" onclick="filtrarSeveridad('leve')">Leve</a>
+                        <a class="dropdown-item" href="#" onclick="filtrarSeveridad('media')">Media</a>
+                        <a class="dropdown-item" href="#" onclick="filtrarSeveridad('grave')">Grave</a>
+                    </div>
+                </li>
+            
+            </ul>
+        </nav>
+        <main class="p-4 d-flex flex-column">
+            <table class="table table-bordered table-hover" id="incident-table">
+			    <thead class="thead-dark">
+                    <tr>
+                        <th>ID</th>
+                        <th>Título</th>
+                        <th>Descripción</th>
+                        <th>Usuario</th>
+                        <th>Severidad</th>
+                        <th>Resuelta</th>
+                        <th>Fecha</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+			    </thead>
+                <tbody id="incident-tbody">
+
+                </tbody>
+		    </table>
+        </main>
+    </body>
+</html>
